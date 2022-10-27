@@ -52,8 +52,8 @@
             <li>
               <%= link_to "Log out",destroy_user_session_path, method: :delete, class: 'nav-link text-dark' %>
               <!--<a class ="nav-link text-light" href ="/users/sign_out">-->
-                <!--<i class="fas fa-sign-out-alt"></i>-->
-                <!--Log out-->
+                <i class="fas fa-sign-out-alt"></i>
+                Log out
               </a>
             </li>
           <% else %>
@@ -88,4 +88,16 @@
     </header>
     <%= yield %>
   </body>
+  <footer>
+    <!--container上側のmargin３レーン分-->
+    <div class = "container mt-5">
+      <!--子要素としてのrow-->
+      <div class = "row">
+        <!--mx-auto = 水平方向に中央揃え-->
+        <div class ="mx-auto">
+          <p>CopyRight Infratop.inc</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 </html>
