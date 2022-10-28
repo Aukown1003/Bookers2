@@ -1,1 +1,15 @@
 <h1>books_show</h1>
+
+book detail
+必要なもの
+プロフィール画像
+名前　どっちもリンク
+タイトル
+オピニオン
+
+<% @book.each do |book| %>
+  <%= img-tag'' %>
+  <%= link_to user.name url:'/user_path' %> 
+  <%= book.title %>
+  <%= book.body %>
+<% end %>
