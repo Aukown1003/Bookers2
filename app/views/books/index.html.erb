@@ -6,6 +6,7 @@
   <p><%= image_tag book.user.get_profile_image(100,100) %></p>
   <p>title<%= book.title %></p>
   <p>opinion<%= book.body %></p>
+  <%= link_to "show", book_path(book.id) %>
 </div>
 <% end %>
 

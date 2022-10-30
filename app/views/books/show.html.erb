@@ -1,15 +1,9 @@
-<h1>books_show</h1>
+<!--books_show-->
+<h2>Book detail</h2>
 
-book detail
-必要なもの
-プロフィール画像
-名前　どっちもリンク
-タイトル
-オピニオン
+< %= image_tag user.get_profile_image(100,100) %>
+<p><strong>Title:</strong><%= @book.title %></p>
 
-<% @book.each do |book| %>
-  <%= img-tag'' %>
-  <%= link_to user.name url:'/user_path' %> 
-  <%= book.title %>
-  <%= book.body %>
-<% end %>
+<p><strong>Body:</strong><%= @book.body %></p>
+
+<%= link_to "Edit", edit_book_path(@book.id) %>
