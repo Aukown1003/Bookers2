@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :books, only:[:index, :show, :create, :edit, :update, :destroy]
   resources :users, only:[:index, :show, :edit, :update]
+  
+  #id 1
   # name:bookers2_test
   # email:test@bookers2
   # pass:
