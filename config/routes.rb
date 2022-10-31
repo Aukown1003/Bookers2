@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   # pass:testpass1
   
   # id2
-  # name bookers2_test2
+  # # name test1
+  # email 1@1
+  # pass test22
   
 end
