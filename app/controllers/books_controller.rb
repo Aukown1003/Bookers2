@@ -3,6 +3,7 @@ class BooksController < ApplicationController
     # user info用のuserデータの受け渡し
     @user = User.find(current_user.id)
     @books = Book.all
+    @book = Book.new
   end
   
   def show
