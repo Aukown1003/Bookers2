@@ -8,5 +8,9 @@ Rails.application.routes.draw do
   #id 1
   # name:bookers2_test
   # email:test@bookers2
-  # pass:
+  # pass:testpass1
+  
+  # id2
+  # name bookers2_test2
+  
 end
