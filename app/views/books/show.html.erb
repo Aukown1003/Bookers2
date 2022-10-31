@@ -1,9 +1,29 @@
 <!--books_show-->
-<h2>Book detail</h2>
-
-<%= image_tag @user.get_profile_image(100,100) %>
-<p><strong>Title:</strong><%= @book.title %></p>
-
-<p><strong>Body:</strong><%= @book.body %></p>
-
-<%= link_to "Edit", edit_book_path(@book.id) %>
+<div class ="container px-5 px-sm-0">
+  <div class ="row">
+    <div class ="col-md-3">
+      <%= render 'layouts/template', user: @user%>
+    </div>
+    <div class ="col-md-8 offset-md-1">
+      <h2>Book detail</h2>
+      <table class ="table">
+       <tbody>
+           <tr>
+             <td>
+               <%= link_to user_path(@book.user.id) do %>
+                 <%= image_tag(@book.user.get_profile_image(100,100)) %>
+                 <div class ="d-block"><%= @book.user.name %></div>
+               <% end%>
+             </td>
+             <td><%= link_to @book.title, book_path(@book.id) %></td>
+             <td><%= @book.body %></td>
+             <% if @book.user == current_user %>
+               <td><%= link_to "Edit", edit_book_path(@book.id), class: "btn btn-success"%></td>
+               <td><%= link_to "Destoroy", book_path(@book.id), method: :delete, class: "btn btn-danger" %></td>
+             <% end %>
+           </tr>
+       </tbody>
+      </table>
+    </div>
+  </div>
+</div>
