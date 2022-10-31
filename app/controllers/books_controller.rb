@@ -1,12 +1,13 @@
 class BooksController < ApplicationController
   def index
+    # user info用のuserデータの受け渡し
+    @user = User.find(current_user.id)
     @books = Book.all
-    
   end
   
   def show
     @book = Book.find(params[:id])
-    @user = @books.user
+    @user = @book.user
   end
   
   def create
