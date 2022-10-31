@@ -1,26 +1,25 @@
 <!--User_index-->
-<div class ="container">
+<div class ="container px-5 px-sm-0">
   <div class ="row">
-    <div class ="col-4">
+    <div class ="col-md-3">
       <%= render 'layouts/template', user: @user%>
     </div>
-    <div class ="col-8">
+    <div class ="col-md-8 offset-md-1">
       <h2>Users</h2>
-      <table class ="table table-hover">
+      <table class ="table">
        <thead>
          <tr>
+           <th>image</th>
+           <th>name</th>
            <th></th>
-           <th>Title</th>
-           <th>Opinion</th>
          </tr>
        </thead>
        <tbody>
-         <% @books.each do |book| %>
+         <% @users.each do |user| %>
            <tr>
-             <!--option(link_to,image_tag) "表示したい名前"or(each分の指定.method名), url-->
-             <th><%= link_to image_tag(book.user.get_profile_image(100,100)), user_path(book.user.id) %></th>
-             <th><%= link_to book.title, book_path(book.id) %></th>
-             <th><%= book.body %></th>
+             <th><%= image_tag user.get_profile_image(100,100) %></th>
+             <th><%= user.name %></th>
+             <th><%= link_to "Show", user_path(user.id) %></th>
            </tr>
          <% end %>
        </tbody>
