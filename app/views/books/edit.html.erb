@@ -1,5 +1,19 @@
 <!--books_edit-->
 <div class ="container">
+  
+  <div id ="error_box">
+  <% if @book.errors.any? %>
+  <ul class="alert alert-danger" role="alert">
+  <h3>
+  <%= @post_image.errors.count %>件のエラーが発生しました
+  </h3>
+  <% @post_image.errors.full_messages.each do |message| %>
+  <li><%= message %></li>
+  <% end %>
+  </ul>
+  <% end %>
+  </div>
+  
   <div class ="row">
     <div class ="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
       <h1>Editing Book</h1>
