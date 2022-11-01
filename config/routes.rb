@@ -14,5 +14,4 @@ Rails.application.routes.draw do
   # # name test1
   # email 1@1
   # pass test22
-  
 end

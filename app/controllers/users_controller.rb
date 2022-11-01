@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    # userの投稿データの
+    # userの投稿データの取得
     @books = @user.books
   end
 
