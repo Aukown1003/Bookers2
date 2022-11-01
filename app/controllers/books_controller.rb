@@ -1,4 +1,7 @@
 class BooksController < ApplicationController
+  # ログインしていなければlog_inにリダイレクト
+  before_action :authenticate_user!
+  
   def index
     # user info用のuserデータの受け渡し
     @user = User.find(current_user.id)
@@ -25,6 +28,10 @@ class BooksController < ApplicationController
   end
   
   def edit
+    user_id = params[:id].to_i
+    if user_id != current_user.id
+      redirect_to books_path
+    end
     @book = Book.find(params[:id])
   end
   
@@ -49,4 +56,5 @@ class BooksController < ApplicationController
   def book_params
     params.require(:book).permit(:title, :body)
   end
+  
 end

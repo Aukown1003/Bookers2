@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  # ログインしていなければlog_inにリダイレクト
+  before_action :authenticate_user!
+  
   def index
     @users = User.all
     # user info用のuserデータの受け渡し
