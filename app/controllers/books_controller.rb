@@ -28,16 +28,20 @@ class BooksController < ApplicationController
   end
   
   def edit
-    user_id = params[:id].to_i
+    @book = Book.find(params[:id])
+    user_id = @book.user.id
+    # params[:id].to_iは本の情報を取得している
+    # user_id = params[:id].to_i　本の情報とユーザーのIDを一致させるのはおかしい
     if user_id != current_user.id
       redirect_to books_path
     end
     @book = Book.find(params[:id])
+    # @book = Book.find(current_user.id)
   end
   
   def update
     @book = Book.find(params[:id])
-    if@book.update(book_params)
+    if @book.update(book_params)
       flash[:notice] = "book_edit successfully"
       redirect_to book_path(@book.id)
     else

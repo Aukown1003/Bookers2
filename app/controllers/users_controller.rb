@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   # ログインしていなければlog_inにリダイレクト
   before_action :authenticate_user!
-  
+
   def index
     @users = User.all
     # user info用のuserデータの受け渡し
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
       render :edit
     end
   end
-  
+
   def user_params
     params.require(:user).permit(:name,:introduction,:profile_image)
   end
